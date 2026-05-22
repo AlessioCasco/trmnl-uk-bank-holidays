@@ -8,11 +8,11 @@ Supports England & Wales, Scotland, and Northern Ireland. All four TRMNL layouts
 
 | Full | Half horizontal |
 | --- | --- |
-| <img alt="Full layout" src="https://github.com/user-attachments/assets/0c7908c8-f2d8-4ebc-b00a-cc776a2afe42" width="400"> | <img alt="Half horizontal layout" src="https://github.com/user-attachments/assets/79025bcc-541a-4e2f-aef7-27eee0a5435c" width="400"> |
+| <img alt="Full layout" src="https://github.com/user-attachments/assets/c058c155-d15d-417b-a64e-1b6dc0617676" width="400"> | <img alt="Half horizontal layout" src="https://github.com/user-attachments/assets/94155389-dc05-48e8-9bfa-47a60ccdf2a8" width="400"> |
 
 | Half vertical | Quadrant |
 | --- | --- |
-| <img alt="Half vertical layout" src="https://github.com/user-attachments/assets/94155389-dc05-48e8-9bfa-47a60ccdf2a8" width="400"> | <img alt="Quadrant layout" src="https://github.com/user-attachments/assets/c058c155-d15d-417b-a64e-1b6dc0617676" width="400"> |
+| <img alt="Half vertical layout" src="https://github.com/user-attachments/assets/79025bcc-541a-4e2f-aef7-27eee0a5435c" width="400"> | <img alt="Quadrant layout" src="https://github.com/user-attachments/assets/0c7908c8-f2d8-4ebc-b00a-cc776a2afe42" width="400"> |
 
 ## Setup
 
