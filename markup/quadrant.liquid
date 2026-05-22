@@ -1,0 +1,27 @@
+{%- assign today_str = 'now' | date: '%Y-%m-%d' -%}
+{%- assign today_ts = today_str | date: '%s' | plus: 0 -%}
+{%- assign next_title = '' -%}
+{%- assign next_date = '' -%}
+{%- for event in events -%}
+{%- if event.date >= today_str -%}
+{%- assign next_title = event.title -%}
+{%- assign next_date = event.date -%}
+{%- break -%}
+{%- endif -%}
+{%- endfor -%}
+{%- assign ev_ts = next_date | date: '%s' | plus: 0 -%}
+{%- assign days = ev_ts | minus: today_ts | divided_by: 86400 -%}
+
+<div class="layout layout--col gap--xsmall">
+  <span class="label label--small">Next UK bank holiday</span>
+  <span class="title title--small" data-clamp="2">{{ next_title }}</span>
+  <span class="value value--large value--tnums">{{ days }}</span>
+  <span class="label label--small">
+    {% if days == 0 %}today{% elsif days == 1 %}day{% else %}days{% endif %} · {{ next_date | date: '%-d %b' }}
+  </span>
+</div>
+
+<div class="title_bar">
+  <span class="title">UK Bank Holidays</span>
+  <span class="instance">{{ division | replace: '-', ' ' | capitalize }}</span>
+</div>

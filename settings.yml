@@ -1,0 +1,15 @@
+- keyname: author_bio
+  field_type: author_bio
+  name: About This Plugin
+  description: Live countdown to the next UK bank holiday, sourced from the official gov.uk feed. Pick your region (England & Wales, Scotland, or Northern Ireland) from the dropdown below.
+  github_url: https://github.com/AlessioCasco/trmnl-uk-bank-holidays
+  category: calendar
+- keyname: region
+  field_type: select
+  name: Region
+  description: Which UK region's bank holidays to display.
+  options:
+    - "England & Wales": england-and-wales
+    - "Scotland": scotland
+    - "Northern Ireland": northern-ireland
+  default: england-and-wales

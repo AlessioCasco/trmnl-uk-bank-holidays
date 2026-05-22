@@ -1,0 +1,61 @@
+{%- assign today_str = 'now' | date: '%Y-%m-%d' -%}
+{%- assign today_ts = today_str | date: '%s' | plus: 0 -%}
+{%- assign next_title = '' -%}
+{%- assign next_date = '' -%}
+{%- assign next_notes = '' -%}
+{%- for event in events -%}
+{%- if event.date >= today_str -%}
+{%- assign next_title = event.title -%}
+{%- assign next_date = event.date -%}
+{%- assign next_notes = event.notes -%}
+{%- break -%}
+{%- endif -%}
+{%- endfor -%}
+{%- assign ev_ts = next_date | date: '%s' | plus: 0 -%}
+{%- assign days = ev_ts | minus: today_ts | divided_by: 86400 -%}
+
+<div class="layout layout--col gap--large" style="height: 100%;">
+
+  <div class="grid grid--cols-2 gap--large flex--grow">
+    <div class="flex flex--col flex--center-y gap--small">
+      <span class="label">Next bank holiday</span>
+      <span class="title title--xxlarge" data-clamp="2">{{ next_title }}</span>
+      <span class="description">{{ next_date | date: '%A, %-d %B %Y' }}</span>
+      {%- if next_notes != '' -%}
+      <span class="label label--small">{{ next_notes }}</span>
+      {%- endif -%}
+    </div>
+    <div class="flex flex--col flex--center">
+      <span class="value value--xxlarge value--tnums">{{ days }}</span>
+      <span class="label">
+        {% if days == 0 %}today{% elsif days == 1 %}day to go{% else %}days to go{% endif %}
+      </span>
+    </div>
+  </div>
+
+  <div class="flex flex--col gap--xsmall">
+    <span class="label label--small">Upcoming</span>
+    <div class="grid grid--cols-2 gap--xsmall">
+      {%- assign found = 0 -%}
+      {%- for event in events -%}
+      {%- if event.date >= today_str and found < 5 -%}
+        {%- assign found = found | plus: 1 -%}
+        {%- if found > 1 -%}
+        <div class="item">
+          <div class="content">
+            <span class="title title--small">{{ event.title }}</span>
+            <span class="description">{{ event.date | date: '%a, %-d %b %Y' }}</span>
+          </div>
+        </div>
+        {%- endif -%}
+        {%- endif -%}
+        {%- endfor -%}
+    </div>
+  </div>
+
+</div>
+
+<div class="title_bar">
+  <span class="title">UK Bank Holidays</span>
+  <span class="instance">{{ division | replace: '-', ' ' | capitalize }}</span>
+</div>
