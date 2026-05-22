@@ -4,6 +4,8 @@ A [TRMNL](https://trmnl.com) Private Plugin that shows the next UK bank holiday 
 
 Supports England & Wales, Scotland, and Northern Ireland. All four TRMNL layouts (full, half horizontal, half vertical, quadrant) are included.
 
+> **Status:** an approval request has been submitted to list this plugin on the official [TRMNL plugin directory](https://trmnl.com/plugins). Until then, install it manually via the Private Plugin flow below.
+
 ## Preview
 
 | Full | Half horizontal |
