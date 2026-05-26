@@ -18,12 +18,12 @@
 
   <div class="flex flex--col gap--xsmall">
     <span class="label label--small">Next bank holiday</span>
-    <span class="title title--large" data-clamp="2">{{ next_title }}</span>
+    <span class="title title--large lg:title--xlarge" data-clamp="2" data-clamp-lg="3">{{ next_title }}</span>
     <span class="description">{{ next_date | date: '%a, %-d %b %Y' }}</span>
   </div>
 
   <div class="flex flex--col">
-    <span class="value value--xxlarge value--tnums">{{ days }}</span>
+    <span class="value value--xxlarge lg:value--mega value--tnums">{{ days }}</span>
     <span class="label label--small">
       {% if days == 0 %}today{% elsif days == 1 %}day to go{% else %}days to go{% endif %}
     </span>
@@ -39,7 +39,7 @@
         {%- if found > 1 -%}
         <div class="item">
           <div class="content">
-            <span class="title title--xsmall" data-clamp="1">{{ event.title }}</span>
+            <span class="title title--xsmall lg:title--small" data-clamp="1">{{ event.title }}</span>
             <span class="description">{{ event.date | date: '%-d %b' }}</span>
           </div>
         </div>

@@ -16,17 +16,17 @@
 
 <div class="layout layout--col gap--large" style="height: 100%;">
 
-  <div class="grid grid--cols-2 gap--large flex--grow">
+  <div class="grid grid--cols-2 portrait:grid--cols-1 gap--large flex--grow">
     <div class="flex flex--col flex--center-y gap--small">
       <span class="label">Next bank holiday</span>
-      <span class="title title--xxlarge" data-clamp="2">{{ next_title }}</span>
+      <span class="title title--xxlarge" data-clamp="2" data-clamp-lg="3">{{ next_title }}</span>
       <span class="description">{{ next_date | date: '%A, %-d %B %Y' }}</span>
       {%- if next_notes != '' -%}
       <span class="label label--small">{{ next_notes }}</span>
       {%- endif -%}
     </div>
     <div class="flex flex--col flex--center">
-      <span class="value value--xxlarge value--tnums">{{ days }}</span>
+      <span class="value value--xxlarge lg:value--mega value--tnums">{{ days }}</span>
       <span class="label">
         {% if days == 0 %}today{% elsif days == 1 %}day to go{% else %}days to go{% endif %}
       </span>
@@ -35,15 +35,15 @@
 
   <div class="flex flex--col gap--xsmall">
     <span class="label label--small">Upcoming</span>
-    <div class="grid grid--cols-2 gap--xsmall">
+    <div class="grid grid--cols-2 lg:grid--cols-3 gap--xsmall">
       {%- assign found = 0 -%}
       {%- for event in events -%}
-      {%- if event.date >= today_str and found < 5 -%}
+      {%- if event.date >= today_str and found < 7 -%}
         {%- assign found = found | plus: 1 -%}
         {%- if found > 1 -%}
         <div class="item">
           <div class="content">
-            <span class="title title--small">{{ event.title }}</span>
+            <span class="title title--small lg:title--base">{{ event.title }}</span>
             <span class="description">{{ event.date | date: '%a, %-d %b %Y' }}</span>
           </div>
         </div>

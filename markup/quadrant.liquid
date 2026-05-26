@@ -14,8 +14,8 @@
 
 <div class="layout layout--col gap--xsmall">
   <span class="label label--small">Next UK bank holiday</span>
-  <span class="title title--small" data-clamp="2">{{ next_title }}</span>
-  <span class="value value--large value--tnums">{{ days }}</span>
+  <span class="title title--small lg:title--base" data-clamp="2">{{ next_title }}</span>
+  <span class="value value--large lg:value--xxlarge value--tnums">{{ days }}</span>
   <span class="label label--small">
     {% if days == 0 %}today{% elsif days == 1 %}day{% else %}days{% endif %} · {{ next_date | date: '%-d %b' }}
   </span>
