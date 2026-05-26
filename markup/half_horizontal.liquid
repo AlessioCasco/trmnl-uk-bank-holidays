@@ -17,11 +17,11 @@
 <div class="layout">
   <div class="grid grid--cols-2 gap--large">
     <div class="flex flex--col gap--xsmall">
-      <span class="label">Next bank holiday</span>
+      <span class="label 4bit:text--gray-30">Next bank holiday</span>
       <span class="title title--large lg:title--xlarge" data-clamp="2" data-clamp-lg="3">{{ next_title }}</span>
-      <span class="description">{{ next_date | date: '%A, %-d %B %Y' }}</span>
+      <span class="description 4bit:text--gray-40">{{ next_date | date: '%A, %-d %B %Y' }}</span>
       {%- if next_notes != '' -%}
-      <span class="label label--small">{{ next_notes }}</span>
+      <span class="label label--small 4bit:text--gray-40">{{ next_notes }}</span>
       {%- endif -%}
     </div>
     <div class="flex flex--col flex--center">

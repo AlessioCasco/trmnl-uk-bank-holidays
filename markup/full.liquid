@@ -18,11 +18,11 @@
 
   <div class="grid grid--cols-2 portrait:grid--cols-1 gap--large flex--grow">
     <div class="flex flex--col flex--center-y gap--small">
-      <span class="label">Next bank holiday</span>
+      <span class="label 4bit:text--gray-30">Next bank holiday</span>
       <span class="title title--xxlarge" data-clamp="2" data-clamp-lg="3">{{ next_title }}</span>
-      <span class="description">{{ next_date | date: '%A, %-d %B %Y' }}</span>
+      <span class="description 4bit:text--gray-40">{{ next_date | date: '%A, %-d %B %Y' }}</span>
       {%- if next_notes != '' -%}
-      <span class="label label--small">{{ next_notes }}</span>
+      <span class="label label--small 4bit:text--gray-40">{{ next_notes }}</span>
       {%- endif -%}
     </div>
     <div class="flex flex--col flex--center">
@@ -34,7 +34,7 @@
   </div>
 
   <div class="flex flex--col gap--xsmall">
-    <span class="label label--small">Upcoming</span>
+    <span class="label label--small 4bit:text--gray-30">Upcoming</span>
     <div class="grid grid--cols-2 lg:grid--cols-3 gap--xsmall">
       {%- assign found = 0 -%}
       {%- for event in events -%}
@@ -44,7 +44,7 @@
         <div class="item">
           <div class="content">
             <span class="title title--small lg:title--base">{{ event.title }}</span>
-            <span class="description">{{ event.date | date: '%a, %-d %b %Y' }}</span>
+            <span class="description 4bit:text--gray-40">{{ event.date | date: '%a, %-d %b %Y' }}</span>
           </div>
         </div>
         {%- endif -%}
